@@ -19,40 +19,46 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/tetris.css">
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
+<div id="app">
+    <div class="container-fluid" v-if="!isLoading">
+        <div class="row">
 
-        <div class="col-sm-4 col-sm-offset-4" style="margin-top: 30px;">
+            <div class="col-sm-4 col-sm-offset-4" style="margin-top: 30px;">
 
-            <center>
-                <img src="./img/ic_launcher/res/mipmap-hdpi/ic_launcher.png">
-                <span style="font-size:24px;">Backend Portal</span>
-            </center>
-            <form action="/action_page.php" style="margin: 40px;">
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="uername" class="form-control" id="username" placeholder="Enter username" name="username">
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
-                </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </form>
+                <center>
+                    <img src="./img/ic_launcher/res/mipmap-hdpi/ic_launcher.png">
+                    <span style="font-size:24px;">Backend Portal</span>
+                </center>
+                <form action="/action_page.php" style="margin: 40px;">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="uername" class="form-control" id="username" placeholder="Enter username" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-<div class='tetris'>
-    <div class='block1'></div>
-    <div class='block2'></div>
-    <div class='block3'></div>
-    <div class='block4'></div>
+    <div class='tetris' v-if="isLoading">
+        <div class='block1'></div>
+        <div class='block2'></div>
+        <div class='block3'></div>
+        <div class='block4'></div>
+    </div>
 </div>
 </body>
+<script src="./js/script.js"></script>
 </html>
 
 
