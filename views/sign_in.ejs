@@ -30,6 +30,27 @@
 <body style="background-image: url('./img/833.jpg')">
 <div id="app">
     <div class="container-fluid animated slideInDown" v-if="!isLoading" >
+        <div class="row">
+
+            <div class="col-sm-4 col-sm-offset-4 card" style="margin-top: 30px; background: #FFFFFF;padding: 20px;">
+
+                <center>
+                    <img src="./img/ic_launcher/res/mipmap-hdpi/ic_launcher.png">
+                    <span style="font-size:24px;">Backend Portal</span>
+                </center>
+                <div style="margin: 40px;">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input v-model="username" type="username" class="form-control" id="username" placeholder="Enter username" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input  v-model="password" type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+                    </div>
+                    <button @click="signin" class="btn btn-primary">Sign in</button>
+                </div>
+            </div>
+        </div>
     </div>
     <div class='tetris' v-if="isLoading">
         <div class='block1'></div>
