@@ -13,7 +13,7 @@ var app = new Vue({
     },
     methods : {
         signin : function () {
-
+            this.isLoading=true;
 
             var url = 'user/check_user';
             var data = {
@@ -26,12 +26,19 @@ var app = new Vue({
             axios.post(url, data)
                 .then(function (response) {
                     console.log(response);
+
                     if (response.data._id!=null){
                         Cookies.set('backend_portal_user', response.data);
+                        this.isLoading=false;
+                    }else{
+                        this.isLoading=false;
+                        alert(response.data.RESULT);
                     }
-                })
+                }.bind(this))
                 .catch(function (error) {
                     console.log(error);
+                    this.isLoading=false;
+                    alert("Network Error!");
                 });
         }
     }
