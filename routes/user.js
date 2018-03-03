@@ -36,26 +36,35 @@ router.post('/check_user', function(req, res, next) {
         };
         dbo.collection("users").findOne(query,function(error, result) {
             if (error) throw err;
-            if (hash(req.body.password+result.random_string) === result.hashed_password){
-                result.auth_token = Math.random().toString(36).substring(7);
-                MongoClient.connect(url, function(err, db) {
-                    if (err) throw err;
-                    dbo.collection("users").updateOne(query,{ $set : result} , function(error_2, result_2) {
-                        if (error_2) throw error_2;
-                        delete result['random_string'];
-                        delete result['hashed_password'];
-                        res.json(result);
-                        db.close();
+            if (result!=null){
+                if (hash(req.body.password+result.random_string) === result.hashed_password){
+                    result.auth_token = Math.random().toString(36).substring(7);
+                    MongoClient.connect(url, function(err, db) {
+                        if (err) throw err;
+                        dbo.collection("users").updateOne(query,{ $set : result} , function(error_2, result_2) {
+                            if (error_2) throw error_2;
+                            delete result['random_string'];
+                            delete result['hashed_password'];
+                            res.json(result);
+                            db.close();
+                        });
                     });
-                });
 
+                }else {
+                    res.json({
+                        "RESULT_CODE" : 1013,
+                        "RESULT" : "Username and password didn't match"
+                    });
+                    db.close();
+                }
             }else {
                 res.json({
-                    "RESULT_CODE" : 1013,
-                    "RESULT" : "Username and password didn't match"
+                    "RESULT_CODE" : 1014,
+                    "RESULT" : "Username and password not found"
                 });
                 db.close();
             }
+
 
         });
     });
