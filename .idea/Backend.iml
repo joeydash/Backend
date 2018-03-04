@@ -8,5 +8,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="axios" level="application" />
+    <orderEntry type="library" name="js.cookie" level="application" />
+    <orderEntry type="library" name="vue" level="application" />
+    <orderEntry type="library" name="alertify" level="application" />
   </component>
 </module>

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Indie Flower', cursive;
 }
 .card {
     /* Add shadows to create the "card" effect */
@@ -23,4 +24,16 @@ body {
     bottom: 0;
     width: 100%;
     text-align: center;
+}
+.tab:hover{
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+.btn-primary {
+        background-color: #2196F3; /* Green */
+}
+.footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 }

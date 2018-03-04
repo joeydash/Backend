@@ -21,7 +21,7 @@ var app = new Vue({
                             password: this.password
                         };
 
-            console.log(data);
+            // console.log(data);
 
             axios.post(url, data)
                 .then(function (response) {
@@ -29,17 +29,38 @@ var app = new Vue({
 
                     if (response.data._id!=null){
                         Cookies.set('backend_portal_user', response.data);
-                        this.isLoading=false;
+                        gotoL("/");
                     }else{
                         this.isLoading=false;
-                        alert(response.data.RESULT);
+                        alertify
+                            .alert("Peeps!",response.data.RESULT, function(){
+                                console.log(response.data.RESULT);
+                            });
                     }
                 }.bind(this))
                 .catch(function (error) {
                     console.log(error);
                     this.isLoading=false;
-                    alert("Network Error!");
+                    alertify
+                        .alert("Peeps!","Network Error", function(){
+                            console.log("Network Error");
+                        });
                 });
+        },
+        signout : function () {
+            alertify.confirm("Peeps!","Do you want to Sign out ?",
+                function(){
+                    Cookies.remove('backend_portal_user');
+                    gotoL("/");
+                },
+                function(){
+                    console.log("did't signed out")
+                });
+
+
         }
     }
 });
+var gotoL = function(url){
+  window.location = url;
+};

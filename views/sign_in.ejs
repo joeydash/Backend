@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
-    <link rel="shortcut icon" href="./img/ic_launcher/res/mipmap-hdpi/ic_launcher.png" />
-    <title>Backend panel</title>
+    <link rel="shortcut icon" href="./img/icon_pack/res/mipmap-hdpi/ic_launcher.png" />
+    <title>Paper Back</title>
 
     <link rel="stylesheet" href="./vendors/w3.css">
     <!-- Latest compiled and minified CSS -->
@@ -16,7 +16,8 @@
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/alertify.min.css"/>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
@@ -27,16 +28,15 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/tetris.css">
 </head>
-<body style="background-image: url('./img/833.jpg')">
+<body style="background-image: url('./img/as.jpg')">
 <div id="app">
     <div class="container-fluid animated slideInDown" v-if="!isLoading" >
         <div class="row">
-
             <div class="col-sm-4 col-sm-offset-4 card" style="margin-top: 30px; background: #FFFFFF;padding: 20px;">
 
                 <center>
-                    <img src="./img/ic_launcher/res/mipmap-hdpi/ic_launcher.png">
-                    <span style="font-size:24px;">Backend Portal</span>
+                    <img src="./img/icon_pack/res/mipmap-hdpi/ic_launcher.png">
+                    <span style="font-size:24px;"><b>Paper Back <span class="badge" style="font-family: Arial">1.0.1</span></b></span>
                 </center>
                 <div style="margin: 40px;">
                     <div class="form-group">
@@ -47,16 +47,17 @@
                         <label for="pwd">Password:</label>
                         <input  v-model="password" type="password" class="form-control" id="password" placeholder="Enter password" name="password">
                     </div>
-                    <button @click="signin" class="btn btn-primary">Sign in</button>
+                    <button @click="signin" type="submit" class="btn btn-primary">Sign in</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class='tetris' v-if="isLoading">
-        <div class='block1'></div>
-        <div class='block2'></div>
-        <div class='block3'></div>
-        <div class='block4'></div>
+    <div class="loading" v-if="isLoading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
     <div class="footer container-fluid">
         <div class="row">

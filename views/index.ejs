@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
-    <link rel="shortcut icon" href="./img/ic_launcher/res/mipmap-hdpi/ic_launcher.png" />
-    <title>Backend panel</title>
+    <link rel="shortcut icon" href="./img/icon_pack/res/mipmap-hdpi/ic_launcher.png" />
+    <title>Paper Back</title>
 
     <link rel="stylesheet" href="./vendors/w3.css">
     <!-- Latest compiled and minified CSS -->
@@ -20,6 +20,9 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/alertify.min.css"/>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <link rel="stylesheet"
@@ -27,24 +30,50 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/tetris.css">
 </head>
-<body style="background-image: url('./img/833.jpg')">
+<body style="background-image: url('./img/as.jpg')">
 <div id="app">
     <div class="container-fluid animated slideInDown" v-if="!isLoading" >
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 card"  style="background: #FFFFFF;margin-top: 50px;">
+
+                <div class="col-sm-4 tab" style="padding: 20px;"><center>
+                        <img src="./img/server.svg" style="height :20px;width: 20px;"> Database <span class="badge">5</span>
+                    </center></div>
+                <div class="col-sm-4 tab" style="padding: 20px;"><center>
+                        <img src="./img/folder.svg" style="height :20px;width: 20px;"> Tables <span class="badge">5</span>
+                    </center></div>
+                <div class="col-sm-4 tab" style="padding: 20px;"><center>
+                        <img src="./img/copy.svg" style="height :20px;width: 20px;"> Data List <span class="badge">5</span>
+                    </center></div>
+            </div>
+
+
+        </div>
     </div>
-    <div class='tetris' v-if="isLoading">
-        <div class='block1'></div>
-        <div class='block2'></div>
-        <div class='block3'></div>
-        <div class='block4'></div>
+    <div class="loading" v-if="isLoading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
     <div class="footer container-fluid">
         <div class="row">
-            <div class="col-sm-3 pull-right card" style="padding : 5px; background: white;"><img src="./img/flash.svg" style="width: 16px; height: 16px;"> powered by joeydash</div>
+            <div class="col-sm-1">
+                <a  data-toggle="tooltip" title="Sign out">
+                    <img @click="signout" class="magic-tool" style="width: 40px;height: 40px;" src="./img/logout_button/res/mipmap-hdpi/ic_launcher.png">
+                </a>
+            </div>
+            <div class="col-sm-2 pull-right card"  style="padding : 5px; background: white;"><img src="./img/flash.svg" style="width: 16px; height: 16px;"> powered by joeydash</div>
         </div>
     </div>
+
 </div>
+
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="./js/script.js"></script>
+
 </html>
 
 
