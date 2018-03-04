@@ -34,7 +34,13 @@
 <div id="app">
     <div class="container-fluid animated slideInDown" v-if="!isLoading" >
         <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 card"  style="background: #FFFFFF;margin-top: 50px;">
+            <div class="col-sm-1">
+                <a  data-toggle="tooltip" title="Sign out">
+                    <img @click="signout" style="width: 40px;height: 40px;margin-top: 20px;" src="./img/user.svg">
+                    <b>{{backend_portal_user.username}}</b>
+                </a>
+            </div>
+            <div class="col-sm-6 col-sm-offset-2 card"  style="background: #FFFFFF;margin-top: 50px;">
 
                 <div class="col-sm-4 tab" style="padding: 20px;"><center>
                         <img src="./img/server.svg" style="height :20px;width: 20px;"> Database <span class="badge">5</span>
@@ -47,7 +53,6 @@
                     </center></div>
             </div>
 
-
         </div>
     </div>
     <div class="loading" v-if="isLoading">
@@ -59,12 +64,7 @@
     </div>
     <div class="footer container-fluid">
         <div class="row">
-            <div class="col-sm-1">
-                <a  data-toggle="tooltip" title="Sign out">
-                    <img @click="signout" class="magic-tool" style="width: 40px;height: 40px;" src="./img/logout_button/res/mipmap-hdpi/ic_launcher.png">
-                </a>
-            </div>
-            <div class="col-sm-2 pull-right card"  style="padding : 5px; background: white;"><img src="./img/flash.svg" style="width: 16px; height: 16px;"> powered by joeydash</div>
+            <div class="col-sm-2 pull-right card"  style="padding : 5px; background: white;">Handwritten with <img src="./img/love-hand-drawn-heart-symbol-outline.svg" style="width: 16px; height: 16px;"> by joeydash</div>
         </div>
     </div>
 

@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
+        backend_portal_user : null,
         username : null,
         password : null,
         isLoading  : true,
@@ -8,6 +9,7 @@ var app = new Vue({
     },
     mounted: function () {
         this.$nextTick(function () {
+            this.backend_portal_user = JSON.parse(Cookies.get('backend_portal_user'));
             this.isLoading = !this.isLoading;
         })
     },
@@ -28,6 +30,7 @@ var app = new Vue({
                     console.log(response);
 
                     if (response.data._id!=null){
+
                         Cookies.set('backend_portal_user', response.data);
                         gotoL("/");
                     }else{

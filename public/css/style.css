@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 body {
     font-family: 'Indie Flower', cursive;
+    color: #123d6d;
 }
 .card {
     /* Add shadows to create the "card" effect */
