@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "setup_start": "node ./bin/www > ./log.txt &"
+    "start": "node ./bin/www > ./log.txt &"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
