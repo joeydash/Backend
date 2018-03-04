@@ -9,7 +9,7 @@ var app = new Vue({
     },
     mounted: function () {
         this.$nextTick(function () {
-            this.backend_portal_user = JSON.parse(Cookies.get('backend_portal_user'));
+            if(Cookies.get('backend_portal_user')!=null){this.backend_portal_user = JSON.parse(Cookies.get('backend_portal_user'))};
             this.isLoading = !this.isLoading;
         })
     },

@@ -34,13 +34,13 @@
 <div id="app">
     <div class="container-fluid animated slideInDown" v-if="!isLoading" >
         <div class="row">
-            <div class="col-sm-1">
-                <a  data-toggle="tooltip" title="Sign out">
-                    <img @click="signout" style="width: 40px;height: 40px;margin-top: 20px;" src="./img/user.svg">
-                    <b>{{backend_portal_user.username}}</b>
+            <div class="col-sm-2">
+                <a title="Sign out">
+                    <img @click="signout" style="width: 40px;height: 40px;margin-top: 20px; " src="./img/user.svg">
+                    <b> {{backend_portal_user.username}}</b>
                 </a>
             </div>
-            <div class="col-sm-6 col-sm-offset-2 card"  style="background: #FFFFFF;margin-top: 50px;">
+            <div class="col-sm-6 col-sm-offset-1 card"  style="background: #FFFFFF;margin-top: 50px;">
 
                 <div class="col-sm-4 tab" style="padding: 20px;"><center>
                         <img src="./img/server.svg" style="height :20px;width: 20px;"> Database <span class="badge">5</span>
