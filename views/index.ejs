@@ -29,15 +29,15 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/tetris.css">
+
 </head>
-<body style="background-image: url('./img/as.jpg')">
+<body>
 <div id="app">
     <div class="container-fluid animated slideInDown" v-if="!isLoading" >
         <div class="row">
             <div class="col-sm-2">
                 <a title="Sign out">
                     <img @click="signout" style="width: 40px;height: 40px;margin-top: 20px; " src="./img/user.svg">
-                    <b> {{backend_portal_user.username}}</b>
                 </a>
             </div>
             <div class="col-sm-6 col-sm-offset-1 card"  style="background: #FFFFFF;margin-top: 10px;">

@@ -38,7 +38,7 @@ router.post('/check_user', function(req, res, next) {
             if (error) throw err;
             if (result!=null){
                 if (hash(req.body.password+result.random_string) === result.hashed_password){
-                    result.auth_token = Math.random().toString(36).substring(7);
+                    result.auth_token = Math.random().toString(36).substring(7)+Math.random().toString(36).substring(7)+Math.random().toString(36).substring(7)+Math.random().toString(36).substring(7);
                     MongoClient.connect(url, function(err, db) {
                         if (err) throw err;
                         dbo.collection("users").updateOne(query,{ $set : result} , function(error_2, result_2) {
