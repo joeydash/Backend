@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://joeydash:joeydash@ds135790.mlab.com:35790/joeydash";
+var url = "mongodb://localhost:27017/";
 var db_name = "joeydash";
 var collection_list = ["food_data"];
 var contains = function(needle) {

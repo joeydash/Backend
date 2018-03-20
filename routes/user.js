@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://manager:joeydash@ds135790.mlab.com:35790/joeydash";
+var url = "mongodb://localhost:27017/";
 var hash = require('object-hash');
 /* GET home page. */
 router.post('/create_user', function(req, res, next) {
