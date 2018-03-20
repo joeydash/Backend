@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://manager:joeydash@ds135790.mlab.com:35790/joeydash";
-
+var url = "mongodb://localhost:27017/";
 
 router.post('/get_db_numbers', function(req, res, next) {
     if (req.get('')!= null){
